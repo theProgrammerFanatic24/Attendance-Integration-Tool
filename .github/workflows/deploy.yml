@@ -1,0 +1,17 @@
+name: Deploy Attendance Tool
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Pull latest code
+        run: |
+          git config --global --add safe.directory C:/GITProjects/attendance-integration-tool
+          cd C:\GITProjects\attendance-integration-tool
+          git pull
